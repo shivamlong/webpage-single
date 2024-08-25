@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam's Site</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Full-screen background section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #001f3f, #003366);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            margin: 0; /* Ensure no extra margin around the hero section */
+        }
+
+        .hero div {
+            margin-top: -10%; /* Move the text container up */
+            padding-top: 0%; /* Adjust top padding to compensate for the moved up content */
+        }
+
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+            max-width: 600px; /* Set a max-width to keep content aligned */
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            font-weight: straight;
+            left: 20px;
+            margin-bottom: 1rem; /* Space below the subtitle */
+            color: white; /* Ensure subtitle is readable */
+            /* No need for absolute positioning */
+        }
+
+        .hero ul {
+            list-style: disc; /* Use disc bullets */
+            margin: 0;
+            padding: 0;
+            left: 20px; /* Move list to the left side */
+            top: 0%; /* Center vertically relative to the container */
+        /*    transform: translateY(-50%); /* Center vertically */
+            text-align: left; /* Left-align list items */
+            max-width: 900px; /* Limit the width of the list */
+            font-size: 1.2rem;
+        }
+
+        .hero ul ul {
+            list-style: circle; /* Use circle bullets for sub-items */
+            margin-left: 20px; /* Indent sub-bullets */
+        }
+
+        .hero ul li {
+            font-size: 1.1rem;
+            margin-bottom: 0.9rem;
+        }
+
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: rem;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: white;
+            color: #001f3f;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #001f3f;
+            color: white;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Additional section */
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div>
+            <h1>Hey, I'm Shivam Patel</h1>
+            <h2>I am still working on building my website out fully, this landing page will have to do for now. 
+               <br> Thanks for being here early!
+            </h2>
+            <br><br><br>
+            <br><br><br>
+            <br><br><br>
+            
+            <div class="subtitle">Current scope of the site is to include a bit of : </div>
+            <ul>
+                <li>Personal Projects
+                    <ul>
+                        <li>
+                            Work Server : 1x Arista CX3 switch, 3x HR350a which amount to 96 cores of Ampere with 1TB of Ram. $40k of hardware aquired for free. All interfaced over fiber through various transceivers and Cavium NICs. Switch OOB through RJ45.
+                        </li>
+                        <li>
+                            Home Server : Linux server hosting private VPN, Jellyfin, Fileserver (zfs pool), HomeAssistant and some VMs.  Future Plans : Include a grafana front end and dashboard to monitor uptime  / get alerts for outages. 
+                            I think it'd be fun to get paged and maintain an SLA for a home server. 
+                        </li>
+                    </ul>
+                </li>
+                <li>Hobbies
+                    <ul>
+                        <li>
+                         Home Reno: Helped build a 950sq.ft deck. Water heater replacements. changing out switches, outlets, thermostats, hardware. Adding home automation to insulation.
+                        </li>
+                        <li>
+                            Scuba (Recue diver), Climbing (trad is rad), Skiing (with skins), Cars (O|||||||O), Motorcycles (YZF/JC61), SIM Flying / Racing (eventually will get PPL), Paragliding and Highlining next summer
+                        </li>
+                   
+                    </ul>
+                </li>
+            </ul>
+
+            <br><br><br><br><br><br>
+
+            <a href="#more-info" class="btn">How's it hosted</a>
+        </div>
+    </section>
+
+
+
+
+    <section id="more-info" class="content">
+        <h2>About This Page</h2>
+        <p>This entire page is hosted for free! Its all written in html being served by Apache2  webserver. Navigate using a six character url through namecheap. All being hosted in a free cloud tenancy through OCI.</p>
+    </section>
+
+    <footer>
+        
+    </footer>
+
+</body>
+</html>

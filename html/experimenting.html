@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Patel's Site</title>
+    <style>
+        :root {
+            --primary-color: #001f3f;
+            --secondary-color: #003366;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin: 0 0 1rem;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero h2 {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: normal;
+            margin-bottom: 1rem;
+        }
+
+        .hero ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            text-align: left;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+        }
+
+        .hero ul ul {
+            list-style: circle;
+            margin-left: 1.5rem;
+        }
+
+        .hero ul li {
+            margin-bottom: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--primary-color);
+            color: white;
+            outline: none;
+        }
+
+        .content {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--background-color);
+        }
+
+        .content h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hey, I'm Shivam Patel</h1>
+            <h2>I'm still working on building my website. This landing page will have to do for now. Thanks for being here early!</h2>
+            
+            <h3 class="subtitle">Current scope of the site is to include:</h3>
+            <ul>
+                <li>Personal Projects
+                    <ul>
+                        <li>Work Server: 1x Arista CX3 switch, 3x HR350a (96 cores of Ampere, 1TB RAM). $40k hardware acquired for free. Interfaced over fiber through various transceivers and Cavium NICs. Switch OOB through RJ45.</li>
+                        <li>Home Server: Linux server hosting private VPN, Jellyfin, Fileserver (zfs pool), HomeAssistant and VMs. Future Plans: Include a Grafana frontend and dashboard to monitor uptime / get alerts for outages.</li>
+                    </ul>
+                </li>
+                <li>Hobbies
+                    <ul>
+                        <li>Home Reno: Helped build a 950 sq.ft deck. Water heater replacements, changing out switches, outlets, thermostats, hardware. Adding home automation to insulation.</li>
+                        <li>Outdoor Activities: Scuba (Rescue diver), Climbing (trad), Skiing (with skins), Cars (O|||||||O), Motorcycles (YZF/JC61), SIM Flying / Racing (future PPL), Paragliding and Highlining (planned for next summer)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <a href="#more-info" class="btn">How it's hosted</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="more-info" class="content">
+            <h2>About This Page</h2>
+            <p>This entire page is hosted for free! It's written in HTML and served by an Apache2 webserver. You can navigate to it using a six-character URL through Namecheap. All of this is hosted in a free cloud tenancy through OCI.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Shivam Patel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
