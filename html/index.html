@@ -3,84 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivam's Site</title>
+    <title>Shivam Patel's Site</title>
     <style>
+        :root {
+            --primary-color: #001f3f;
+            --secondary-color: #003366;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: 'Arial', sans-serif;
             scroll-behavior: smooth;
+            line-height: 1.6;
+            color: var(--text-color);
         }
 
-        /* Full-screen background section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #001f3f, #003366);
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 20px;
-            margin: 0; /* Ensure no extra margin around the hero section */
+            padding: 2rem;
         }
-
-        .hero div {
-            margin-top: -10%; /* Move the text container up */
-            padding-top: 0%; /* Adjust top padding to compensate for the moved up content */
-        }
-
 
         .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align items to the left */
-            max-width: 600px; /* Set a max-width to keep content aligned */
+            max-width: 800px;
         }
-
-        .hero .subtitle {
-            font-size: 1.4rem;
-            font-weight: straight;
-            left: 20px;
-            margin-bottom: 1rem; /* Space below the subtitle */
-            color: white; /* Ensure subtitle is readable */
-            /* No need for absolute positioning */
-        }
-
-        .hero ul {
-            list-style: disc; /* Use disc bullets */
-            margin: 0;
-            padding: 0;
-            left: 20px; /* Move list to the left side */
-            top: 0%; /* Center vertically relative to the container */
-        /*    transform: translateY(-50%); /* Center vertically */
-            text-align: left; /* Left-align list items */
-            max-width: 900px; /* Limit the width of the list */
-            font-size: 1.2rem;
-        }
-
-        .hero ul ul {
-            list-style: circle; /* Use circle bullets for sub-items */
-            margin-left: 20px; /* Indent sub-bullets */
-        }
-
-        .hero ul li {
-            font-size: 1.1rem;
-            margin-bottom: 0.9rem;
-        }
-
 
         .hero h1 {
-            font-size: 4rem;
-            margin: 0;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin: 0 0 1rem;
             animation: fadeInDown 1.5s ease;
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: rem;
+        .hero h2 {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: 2rem;
             animation: fadeInUp 1.5s ease;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: normal;
+            margin-bottom: 1rem;
+        }
+
+        .hero ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            text-align: left;
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+        }
+
+        .hero ul ul {
+            list-style: circle;
+            margin-left: 1.5rem;
+        }
+
+        .hero ul li {
+            margin-bottom: 0.9rem;
         }
 
         .btn {
@@ -88,16 +76,41 @@
             margin-top: 2rem;
             padding: 0.8rem 2rem;
             background-color: white;
-            color: #001f3f;
+            color: var(--primary-color);
             border: none;
             border-radius: 50px;
             text-decoration: none;
             font-size: 1.2rem;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .btn:hover {
-            background-color: #001f3f;
+        .btn:hover, .btn:focus {
+            background-color: var(--primary-color);
+            color: white;
+            outline: none;
+        }
+
+        .content {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--background-color);
+        }
+
+        .content h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--primary-color);
             color: white;
         }
 
@@ -111,89 +124,48 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Additional section */
-        .content {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f4f4f4;
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+            }
         }
-
-        .content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        footer {
-            padding: 20px;
-            text-align: center;
-            background-color: #333;
-            color: white;
-        }
-
-
     </style>
 </head>
 <body>
-
-    <section class="hero">
-        <div>
+    <header class="hero">
+        <div class="hero-content">
             <h1>Hey, I'm Shivam Patel</h1>
-            <h2>I am still working on building my website out fully, this landing page will have to do for now. 
-               <br> Thanks for being here early!
-            </h2>
-            <br><br><br>
-            <br><br><br>
-            <br><br><br>
+            <h2>I'm still working on building my website. This landing page will have to do for now. Thanks for being here early!</h2>
             
-            <div class="subtitle">Current scope of the site is to include a bit of : </div>
+            <h3 class="subtitle">Current scope of the site is to include:</h3>
             <ul>
                 <li>Personal Projects
                     <ul>
-                        <li>
-                            Work Server : 1x Arista CX3 switch, 3x HR350a which amount to 96 cores of Ampere with 1TB of Ram. $40k of hardware aquired for free. All interfaced over fiber through various transceivers and Cavium NICs. Switch OOB through RJ45.
-                        </li>
-                        <li>
-                            Home Server : Linux server hosting private VPN, Jellyfin, Fileserver (zfs pool), HomeAssistant and some VMs.  Future Plans : Include a grafana front end and dashboard to monitor uptime  / get alerts for outages. 
-                            I think it'd be fun to get paged and maintain an SLA for a home server. 
-                        </li>
+                        <li>Work Server: 1x Arista CX3 switch, 3x HR350a (96 cores of Ampere, 1TB RAM). $40k hardware acquired for free. Interfaced over fiber through various transceivers and Cavium NICs. Switch OOB through RJ45.</li>
+                        <li>Home Server: Linux server hosting private VPN, Jellyfin, Fileserver (zfs pool), HomeAssistant and VMs. Future Plans: Include a Grafana frontend and dashboard to monitor uptime / get alerts for outages.</li>
                     </ul>
                 </li>
                 <li>Hobbies
                     <ul>
-                        <li>
-                         Home Reno: Helped build a 950sq.ft deck. Water heater replacements. changing out switches, outlets, thermostats, hardware. Adding home automation to insulation.
-                        </li>
-                        <li>
-                            Scuba (Recue diver), Climbing (trad is rad), Skiing (with skins), Cars (O|||||||O), Motorcycles (YZF/JC61), SIM Flying / Racing (eventually will get PPL), Paragliding and Highlining next summer
-                        </li>
-                   
+                        <li>Home Reno: Helped build a 950 sq.ft deck. Water heater replacements, changing out switches, outlets, thermostats, hardware. Adding home automation to insulation.</li>
+                        <li>Outdoor Activities: Scuba (Rescue diver), Climbing (trad), Skiing (with skins), Cars (O|||||||O), Motorcycles (YZF/JC61), SIM Flying / Racing (future PPL), Paragliding and Highlining (planned for next summer)</li>
                     </ul>
                 </li>
             </ul>
 
-            <br><br><br><br><br><br>
-
-            <a href="#more-info" class="btn">How's it hosted</a>
+            <a href="#more-info" class="btn">How it's hosted</a>
         </div>
-    </section>
+    </header>
 
-
-
-
-    <section id="more-info" class="content">
-        <h2>About This Page</h2>
-        <p>This entire page is hosted for free! Its all written in html being served by Apache2  webserver. Navigate using a six character url through namecheap. All being hosted in a free cloud tenancy through OCI.</p>
-    </section>
+    <main>
+        <section id="more-info" class="content">
+            <h2>About This Page</h2>
+            <p>This entire page is hosted for free! It's written in HTML and served by an Apache2 webserver. You can navigate to it using a six-character URL through Namecheap. All of this is hosted in a free cloud tenancy through OCI.</p>
+        </section>
+    </main>
 
     <footer>
-        
+        <p>&copy; 2024 Shivam Patel. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
